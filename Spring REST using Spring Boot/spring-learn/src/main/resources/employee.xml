@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="javaSkill" class="com.cognizant.springlearn.model.Skill">
+        <property name="id" value="1"/>
+        <property name="name" value="Java"/>
+    </bean>
+    <bean id="springSkill" class="com.cognizant.springlearn.model.Skill">
+        <property name="id" value="2"/>
+        <property name="name" value="Spring Boot"/>
+    </bean>
+    <bean id="angularSkill" class="com.cognizant.springlearn.model.Skill">
+        <property name="id" value="3"/>
+        <property name="name" value="Angular"/>
+    </bean>
+
+    <bean id="technology" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="1"/>
+        <property name="name" value="Technology"/>
+    </bean>
+    <bean id="finance" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="2"/>
+        <property name="name" value="Finance"/>
+    </bean>
+    <bean id="hr" class="com.cognizant.springlearn.model.Department">
+        <property name="id" value="3"/>
+        <property name="name" value="Human Resources"/>
+    </bean>
+
+    <bean id="aliceDob" class="java.time.LocalDate" factory-method="parse">
+        <constructor-arg value="1990-05-15"/>
+    </bean>
+    <bean id="bobDob" class="java.time.LocalDate" factory-method="parse">
+        <constructor-arg value="1992-03-20"/>
+    </bean>
+    <bean id="carolDob" class="java.time.LocalDate" factory-method="parse">
+        <constructor-arg value="1995-07-10"/>
+    </bean>
+    <bean id="davidDob" class="java.time.LocalDate" factory-method="parse">
+        <constructor-arg value="1994-01-05"/>
+    </bean>
+
+    <bean id="employee1" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="1"/>
+        <property name="name" value="Alice Johnson"/>
+        <property name="salary" value="80000"/>
+        <property name="permanent" value="true"/>
+        <property name="dateOfBirth" ref="aliceDob"/>
+        <property name="department" ref="technology"/>
+        <property name="skillList">
+            <list>
+                <ref bean="javaSkill"/>
+                <ref bean="springSkill"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="employee2" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="2"/>
+        <property name="name" value="Bob Brown"/>
+        <property name="salary" value="65000"/>
+        <property name="permanent" value="true"/>
+        <property name="dateOfBirth" ref="bobDob"/>
+        <property name="department" ref="technology"/>
+        <property name="skillList">
+            <list>
+                <ref bean="javaSkill"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="employee3" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="3"/>
+        <property name="name" value="Carol Smith"/>
+        <property name="salary" value="70000"/>
+        <property name="permanent" value="false"/>
+        <property name="dateOfBirth" ref="carolDob"/>
+        <property name="department" ref="finance"/>
+        <property name="skillList">
+            <list>
+                <ref bean="angularSkill"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="employee4" class="com.cognizant.springlearn.model.Employee">
+        <property name="id" value="4"/>
+        <property name="name" value="David Green"/>
+        <property name="salary" value="72000"/>
+        <property name="permanent" value="true"/>
+        <property name="dateOfBirth" ref="davidDob"/>
+        <property name="department" ref="hr"/>
+        <property name="skillList">
+            <list>
+                <ref bean="javaSkill"/>
+                <ref bean="angularSkill"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="departmentList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="technology"/>
+                <ref bean="finance"/>
+                <ref bean="hr"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="employeeList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="employee1"/>
+                <ref bean="employee2"/>
+                <ref bean="employee3"/>
+                <ref bean="employee4"/>
+            </list>
+        </constructor-arg>
+    </bean>
+</beans>
