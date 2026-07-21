@@ -1,0 +1,5 @@
+INSERT INTO departments (id, name, created_by, created_date, last_modified_by, last_modified_date) VALUES (1, 'Engineering', 'system', CURRENT_TIMESTAMP, 'system', CURRENT_TIMESTAMP);
+INSERT INTO departments (id, name, created_by, created_date, last_modified_by, last_modified_date) VALUES (2, 'Finance', 'system', CURRENT_TIMESTAMP, 'system', CURRENT_TIMESTAMP);
+INSERT INTO employees (id, name, email, salary, active, department_id, created_by, created_date, last_modified_by, last_modified_date) VALUES (1, 'Alice Johnson', 'alice@example.com', 80000, TRUE, 1, 'system', CURRENT_TIMESTAMP, 'system', CURRENT_TIMESTAMP);
+INSERT INTO employees (id, name, email, salary, active, department_id, created_by, created_date, last_modified_by, last_modified_date) VALUES (2, 'Bob Brown', 'bob@example.com', 65000, TRUE, 1, 'system', CURRENT_TIMESTAMP, 'system', CURRENT_TIMESTAMP);
+INSERT INTO employees (id, name, email, salary, active, department_id, created_by, created_date, last_modified_by, last_modified_date) VALUES (3, 'Carol Smith', 'carol@example.com', 70000, TRUE, 2, 'system', CURRENT_TIMESTAMP, 'system', CURRENT_TIMESTAMP);
