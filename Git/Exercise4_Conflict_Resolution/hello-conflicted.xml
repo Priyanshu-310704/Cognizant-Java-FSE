@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+<message>
+  <text>Hello from master branch</text>
+</message>
+=======
+<message>
+  <text>Hello from GitWork branch</text>
+</message>
+>>>>>>> GitWork
